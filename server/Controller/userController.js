@@ -33,7 +33,7 @@ module.exports = {
             }
 
         delete existingUser[0].password
-        req.session.user = sessionUser
+        req.session.user = existingUser[0]
         res.status(202).json(req.session.user)
     },
     logout: (req, res) => {

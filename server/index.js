@@ -7,7 +7,7 @@ const express = require('express'),
       app = express(),
       path = require('path')
 
-app.use(expres.json())
+app.use(express.json())
 
 app.use(session({
     resave: false,
