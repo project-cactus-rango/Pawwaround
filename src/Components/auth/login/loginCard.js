@@ -53,11 +53,6 @@ const useStyles = makeStyles(theme => ({
       display: "none",
     },
   },
-  alert: {
-    backgroundColor: "#1C1F22",
-    fontSize: "16px",
-    color: "#adb0bb !important",
-  },
 }));
 // <======================================================>
 
@@ -72,11 +67,20 @@ export default function LoginCard() {
     <div className={classes.root}>
       <CssBaseline />
       <Container maxWidth="md">
+        <Box mb={3}>
+          <Typography color="textSecondary" variant="h1" align="center">
+            Video-Sync
+          </Typography>
+        </Box>
         <Paper className={classes.card}>
           <CardContent className={classes.content}>
             <FadeIn>
-              <div className="header">Sign In</div>
-              <div className="subtitle">Your Welcome To Sign In </div>
+              <Typography color="textSecondary" variant="h1">
+                Video-Sync
+              </Typography>
+              <Typography color="textSecondary" variant="subtitle1">
+                Lets you watch together
+              </Typography>
               <Box mt={3}>
                 <LoginForm onSubmitSuccess={handleSubmitSuccess} />
               </Box>

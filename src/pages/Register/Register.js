@@ -1,5 +1,10 @@
 import React from "react";
+import RegisterCard from "../../Components/auth/register/registerCard";
 
 export default function Register() {
-  return <div>hello Register</div>;
+  return (
+    <div>
+      <RegisterCard />
+    </div>
+  );
 }
