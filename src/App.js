@@ -3,7 +3,7 @@ import Routes from "./routes";
 
 //Meterial UI imports
 import { ThemeProvider } from "@material-ui/core/styles";
-import { createTheme } from "./theme/Theme";
+import { createTheme } from "./theme";
 
 function App() {
   return (
