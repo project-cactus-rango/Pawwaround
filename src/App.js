@@ -1,9 +1,16 @@
 import React from "react";
+import Routes from "./routes";
 
-import "./App.css";
+//Meterial UI imports
+import { ThemeProvider } from "@material-ui/core/styles";
+import { createTheme } from "./theme";
 
 function App() {
-  return <div className="App">hello it Winslow</div>;
+  return (
+    <ThemeProvider theme={createTheme()}>
+      <Routes />
+    </ThemeProvider>
+  );
 }
 
 export default App;
