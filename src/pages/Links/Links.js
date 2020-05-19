@@ -1,10 +1,10 @@
 import React from 'react'
-import linksCard from '../../Components/auth/links/linksCard'
+import LinksCard from '../../Components/links/linksCard'
 
 const Links = () => {
     return(
         <div>
-            <linksCard/>
+            <LinksCard/>
         </div>
     )
 }

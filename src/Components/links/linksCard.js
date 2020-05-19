@@ -24,11 +24,11 @@ const useStyles = makeStyles((theme) => ({
       display: 'block',
       maxWidth: '100%',
       maxHeight: '100%',
-    },
-  }))
+    }
+  }));
 
-const linksCard = () => {
-    const classes = useStyles()
+function LinksCard(){
+    const classes = useStyles();
   
     return (
       <div>
@@ -58,4 +58,4 @@ const linksCard = () => {
   );
 };
 
-export default Links;
+export default LinksCard;
