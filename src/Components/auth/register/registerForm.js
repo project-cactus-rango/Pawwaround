@@ -50,7 +50,6 @@ function registerForm({ onSubmitSuccess }) {
             onChange={handleChange}
             type="firstName"
             value={values.firstName}
-            variant="outlined"
           />
           <TextField
             error={Boolean(touched.lastName && errors.lastName)}
@@ -63,7 +62,6 @@ function registerForm({ onSubmitSuccess }) {
             onChange={handleChange}
             type="lastName"
             value={values.lastName}
-            variant="outlined"
           />
           <TextField
             error={Boolean(touched.email && errors.email)}
@@ -76,7 +74,6 @@ function registerForm({ onSubmitSuccess }) {
             onChange={handleChange}
             type="email"
             value={values.email}
-            variant="outlined"
           />
           <TextField
             error={Boolean(touched.password && errors.password)}
@@ -89,7 +86,6 @@ function registerForm({ onSubmitSuccess }) {
             onChange={handleChange}
             type="password"
             value={values.password}
-            variant="outlined"
           />
           <Box mt={2}>
             <Button
