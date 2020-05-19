@@ -18,7 +18,7 @@ import {
 const useStyles = makeStyles(theme => ({
   root: {
     justifyContent: "center",
-    backgroundColor: theme.palette.background.dark,
+    backgroundColor: theme.palette.background.default,
     display: "flex",
     height: "100%",
     minHeight: "100%",
@@ -27,7 +27,7 @@ const useStyles = makeStyles(theme => ({
     paddingTop: 80,
   },
   card: {
-    backgroundColor: "#282A2D",
+    // backgroundColor: "#282A2D",
   },
 }));
 
