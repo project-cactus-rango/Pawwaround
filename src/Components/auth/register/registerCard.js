@@ -18,13 +18,14 @@ import {
 const useStyles = makeStyles(theme => ({
   root: {
     justifyContent: "center",
-    backgroundColor: theme.palette.background.default,
     display: "flex",
     height: "100%",
     minHeight: "100%",
     flexDirection: "column",
     paddingBottom: 80,
     paddingTop: 80,
+    position: "relative",
+    zIndex: 1,
   },
   card: {
     // backgroundColor: "#282A2D",
