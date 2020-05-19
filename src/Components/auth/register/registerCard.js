@@ -28,6 +28,7 @@ const useStyles = makeStyles(theme => ({
   },
   card: {
     // backgroundColor: "#282A2D",
+    borderRadius: 14,
   },
 }));
 
@@ -43,13 +44,15 @@ function RegisterCard() {
         <Card className={classes.card}>
           <CardContent>
             <FadeIn>
-              <Typography gutterBottom variant="h1" color="textSecondary">
+              <Typography
+                gutterBottom
+                variant="h2"
+                color="textSecondary"
+                align="center"
+              >
                 Sign up
               </Typography>
-              <Typography variant="subtitle1">
-                Sign up on the internal platform
-              </Typography>
-              <Box mt={3}>
+              <Box mt={1}>
                 <RegisterForm onSubmitSuccess={handleSubmitSuccess} />
               </Box>
               <Box my={2}>
