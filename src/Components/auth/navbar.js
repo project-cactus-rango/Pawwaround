@@ -1,7 +1,7 @@
 import React from "react";
 import { Link as RouterLink } from "react-router-dom";
 
-// import Logo from "../../assets/cat3.svg";
+import Logo from "../../images/dogLogo.svg";
 
 import {
   AppBar,
@@ -19,8 +19,8 @@ const useStyles = makeStyles(theme => ({
     minHeight: 80,
   },
   avatar: {
-    height: 44,
-    width: 44,
+    height: 62,
+    width: 62,
   },
 }));
 
@@ -29,11 +29,10 @@ function Navbar() {
   return (
     <AppBar position="absolute" className={classes.root}>
       <Toolbar className={classes.toolbar}>
-        <IconButton size="small">
-          <RouterLink to="/">
-            {/* <img alt="Logo" src={Logo} className={classes.avatar} /> */}
-          </RouterLink>
-        </IconButton>
+        <RouterLink to="/">
+          <img alt="Logo" src={Logo} className={classes.avatar} />
+        </RouterLink>
+
         <Box ml={2} flexGrow={1} />
       </Toolbar>
     </AppBar>
