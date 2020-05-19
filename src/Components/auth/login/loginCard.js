@@ -19,7 +19,7 @@ import FadeIn from "react-fade-in";
 const useStyles = makeStyles(theme => ({
   root: {
     justifyContent: "center",
-    backgroundColor: "#1C1F22",
+    // backgroundColor: "#1C1F22",
     display: "flex",
     height: "100%",
     minHeight: "100%",
