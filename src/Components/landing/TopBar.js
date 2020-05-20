@@ -2,6 +2,7 @@ import React from "react";
 // import Logo from "src/components/Logo";
 import { Link as RouterLink } from "react-router-dom";
 import Logo from "../../images/dogLogo.svg";
+import Pawwaround from "../../images/Pawwaround.png";
 
 import {
   AppBar,
@@ -13,6 +14,7 @@ import {
   Typography,
   Link,
   makeStyles,
+  useScrollTrigger,
 } from "@material-ui/core";
 
 const useStyles = makeStyles(theme => ({
@@ -24,8 +26,7 @@ const useStyles = makeStyles(theme => ({
   },
   logo: {
     marginRight: theme.spacing(2),
-    height: 62,
-    width: 62,
+    height: 44,
   },
   link: {
     fontWeight: theme.typography.fontWeightMedium,
@@ -41,21 +42,32 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function TopBar() {
+function ElevationScroll(props) {
+  const { children } = props;
+  const trigger = useScrollTrigger({
+    disableHysteresis: true,
+    threshold: 0,
+  });
+
+  return React.cloneElement(children, {
+    elevation: trigger ? 4 : 0,
+  });
+}
+
+export default function TopBar(props) {
   const classes = useStyles();
   return (
-    <AppBar className={classes.root}>
-      <Toolbar className={classes.toolbar}>
-        <RouterLink to="/">
-          <img alt="Logo" src={Logo} className={classes.logo} />
-        </RouterLink>
-        <Hidden mdDown>
-          <Typography variant="caption" color="textSecondary">
-            Pawwaround
-          </Typography>
-        </Hidden>
-        <Box flexGrow={1} />
-        {/* <Button
+    <ElevationScroll {...props}>
+      <AppBar className={classes.root} elevation={0}>
+        <Toolbar className={classes.toolbar}>
+          <RouterLink to="/">
+            <img alt="Logo" src={Logo} className={classes.logo} />
+            <Hidden smDown>
+              <img alt="Logo" src={Pawwaround} className={classes.logo} />
+            </Hidden>
+          </RouterLink>
+          <Box flexGrow={1} />
+          {/* <Button
           color="secondary"
           component="a"
           href=""
@@ -64,28 +76,29 @@ export default function TopBar() {
         >
           Get the kit
         </Button> */}
-        <Divider className={classes.divider} />
-        <Link
-          className={classes.link}
-          color="textSecondary"
-          component={RouterLink}
-          to="/login"
-          underline="none"
-          variant="body1"
-        >
-          Login in
-        </Link>
-        <Link
-          className={classes.link}
-          color="textSecondary"
-          component={RouterLink}
-          to="/signup"
-          underline="none"
-          variant="body1"
-        >
-          Sign up
-        </Link>
-      </Toolbar>
-    </AppBar>
+          <Divider className={classes.divider} />
+          <Link
+            className={classes.link}
+            color="textSecondary"
+            component={RouterLink}
+            to="/login"
+            underline="none"
+            variant="body1"
+          >
+            Login in
+          </Link>
+          <Link
+            className={classes.link}
+            color="textSecondary"
+            component={RouterLink}
+            to="/signup"
+            underline="none"
+            variant="body1"
+          >
+            Sign up
+          </Link>
+        </Toolbar>
+      </AppBar>
+    </ElevationScroll>
   );
 }
