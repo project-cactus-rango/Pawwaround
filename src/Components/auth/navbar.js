@@ -3,13 +3,7 @@ import { Link as RouterLink } from "react-router-dom";
 
 import Logo from "../../images/dogLogo.svg";
 
-import {
-  AppBar,
-  Box,
-  IconButton,
-  Toolbar,
-  makeStyles,
-} from "@material-ui/core";
+import { AppBar, Box, Toolbar, makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles(theme => ({
   root: {

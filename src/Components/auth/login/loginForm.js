@@ -53,7 +53,6 @@ function loginForm({ onSubmitSuccess }) {
             onChange={handleChange}
             type="email"
             value={values.email}
-            variant="outlined"
           />
           <TextField
             error={Boolean(touched.password && errors.password)}
@@ -66,7 +65,6 @@ function loginForm({ onSubmitSuccess }) {
             onChange={handleChange}
             type="password"
             value={values.password}
-            variant="outlined"
           />
           <Box mt={2}>
             <Button
