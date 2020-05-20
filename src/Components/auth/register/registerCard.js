@@ -42,7 +42,7 @@ function RegisterCard() {
   return (
     <div className={classes.root}>
       <Container maxWidth="sm">
-        <Card className={classes.card}>
+        <Card className={classes.card} elevation={3}>
           <CardContent>
             <FadeIn>
               <Typography
@@ -61,7 +61,7 @@ function RegisterCard() {
               </Box>
               <Link
                 component={RouterLink}
-                to="/"
+                to="/login"
                 variant="body2"
                 color="textSecondary"
               >
