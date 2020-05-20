@@ -24,7 +24,21 @@ function loginForm({ onSubmitSuccess }) {
       })}
       onSubmit={(values, { setErrors, setStatus, setSubmitting }) => {
         // const { email, password } = values;
-        //Axios call will go here
+        // axios
+        //   .post("/api/auth/login", { email, password })
+        //   .then(res => {
+        //     //set redux state
+        //     //push to dashboard
+        //     onSubmitSuccess();
+        //   })
+        //   .catch(error => {
+        //     const message =
+        //       (error.response && error.response.data.message) ||
+        //       "Something went wrong";
+        //     setStatus({ success: false });
+        //     setErrors({ submit: message });
+        //     setSubmitting(false);
+        //   });
       }}
     >
       {({
