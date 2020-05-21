@@ -3,10 +3,14 @@ import * as Yup from "yup";
 import { Formik } from "formik";
 import axios from "axios";
 
+import { useDispatch } from "react-redux";
+import { getUser } from "../../../redux/reducer";
+
 // <======================Material-ui========================>
 import { Box, Button, TextField, FormHelperText } from "@material-ui/core";
 
-function registerForm({ onSubmitSuccess }) {
+function RegisterForm({ onSubmitSuccess }) {
+  const dispatch = useDispatch();
   return (
     <Formik
       initialValues={{
@@ -27,22 +31,22 @@ function registerForm({ onSubmitSuccess }) {
       onSubmit={(values, { setErrors, setStatus, setSubmitting }) => {
         const { email, firstName, lastName, password } = values;
         //add axios call here
-        // axios
-        //   .post("/api/auth/register", { firstName, lastName, email, password })
-        //   .then(res => {
-        //     //set redux state
-        //     getUser(res.data);
-        //     //push to dashboard
-        //     onSubmitSuccess();
-        //   })
-        //   .catch(error => {
-        //     const message =
-        //       (error.response && error.response.data.message) ||
-        //       "Something went wrong";
-        //     setStatus({ success: false });
-        //     setErrors({ submit: message });
-        //     setSubmitting(false);
-        //   });
+        axios
+          .post("/user/register", { firstName, lastName, email, password })
+          .then(res => {
+            //set redux state
+            dispatch(getUser(res.data));
+            //push to dashboard
+            onSubmitSuccess();
+          })
+          .catch(error => {
+            const message =
+              (error.response && error.response.data.message) ||
+              "Something went wrong";
+            setStatus({ success: false });
+            setErrors({ submit: message });
+            setSubmitting(false);
+          });
       }}
     >
       {({
@@ -126,4 +130,4 @@ function registerForm({ onSubmitSuccess }) {
   );
 }
 
-export default registerForm;
+export default RegisterForm;
