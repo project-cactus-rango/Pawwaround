@@ -2,8 +2,9 @@ import React from "react";
 import { Link as RouterLink } from "react-router-dom";
 
 import Logo from "../../images/dogLogo.svg";
+import Pawwaround from "../../images/Pawwaround.png";
 
-import { AppBar, Box, Toolbar, makeStyles } from "@material-ui/core";
+import { AppBar, Box, Toolbar, makeStyles, Hidden } from "@material-ui/core";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -12,19 +13,22 @@ const useStyles = makeStyles(theme => ({
   toolbar: {
     minHeight: 80,
   },
-  avatar: {
-    height: 62,
-    width: 62,
+  logo: {
+    marginRight: theme.spacing(2),
+    height: 44,
   },
 }));
 
 function Navbar() {
   const classes = useStyles();
   return (
-    <AppBar position="absolute" className={classes.root}>
+    <AppBar position="absolute" className={classes.root} elevation={0}>
       <Toolbar className={classes.toolbar}>
         <RouterLink to="/">
-          <img alt="Logo" src={Logo} className={classes.avatar} />
+          <img alt="Logo" src={Logo} className={classes.logo} />
+          <Hidden smDown>
+            <img alt="Logo" src={Pawwaround} className={classes.logo} />
+          </Hidden>
         </RouterLink>
 
         <Box ml={2} flexGrow={1} />

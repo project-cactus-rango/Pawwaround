@@ -1,7 +1,7 @@
 import React from "react";
 import * as Yup from "yup";
 import { Formik } from "formik";
-// import axios from "axios";
+import axios from "axios";
 
 // <======================Material-ui========================>
 import { Box, Button, TextField, FormHelperText } from "@material-ui/core";
@@ -25,8 +25,24 @@ function registerForm({ onSubmitSuccess }) {
         password: Yup.string().min(7).max(255).required("Password is required"),
       })}
       onSubmit={(values, { setErrors, setStatus, setSubmitting }) => {
-        // const { email, firstName, lastName, password } = values;
+        const { email, firstName, lastName, password } = values;
         //add axios call here
+        // axios
+        //   .post("/api/auth/register", { firstName, lastName, email, password })
+        //   .then(res => {
+        //     //set redux state
+        //     getUser(res.data);
+        //     //push to dashboard
+        //     onSubmitSuccess();
+        //   })
+        //   .catch(error => {
+        //     const message =
+        //       (error.response && error.response.data.message) ||
+        //       "Something went wrong";
+        //     setStatus({ success: false });
+        //     setErrors({ submit: message });
+        //     setSubmitting(false);
+        //   });
       }}
     >
       {({
