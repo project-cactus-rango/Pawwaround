@@ -37,7 +37,7 @@ function RegisterCard() {
   const classes = useStyles();
   const history = useHistory();
   const handleSubmitSuccess = () => {
-    history.push("/dashboard");
+    history.push("/events");
   };
   return (
     <div className={classes.root}>
