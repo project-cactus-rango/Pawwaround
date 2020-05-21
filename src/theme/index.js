@@ -21,7 +21,7 @@ const themeConfig = {
     },
     background: {
       default: colors.common.white,
-      dark: "#F2ECE4",
+      dark: "#F0F2F2",
       paper: colors.common.white,
     },
     primary: {
@@ -33,6 +33,7 @@ const themeConfig = {
     text: {
       primary: colors.blueGrey[900],
       secondary: colors.blueGrey[600],
+      third: colors.common.white,
     },
   },
   shadows: softShadows,
