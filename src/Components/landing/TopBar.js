@@ -25,7 +25,7 @@ const useStyles = makeStyles(theme => ({
   },
   logo: {
     marginRight: theme.spacing(2),
-    height: 44,
+    height: 40,
   },
   link: {
     fontWeight: theme.typography.fontWeightMedium,

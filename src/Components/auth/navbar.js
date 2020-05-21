@@ -11,11 +11,11 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: theme.palette.background.default,
   },
   toolbar: {
-    minHeight: 80,
+    minHeight: 88,
   },
   logo: {
     marginRight: theme.spacing(2),
-    height: 44,
+    height: 40,
   },
 }));
 
