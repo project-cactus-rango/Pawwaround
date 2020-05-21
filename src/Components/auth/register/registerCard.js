@@ -47,11 +47,11 @@ function RegisterCard() {
             <FadeIn>
               <Typography
                 gutterBottom
-                variant="h2"
+                variant="h1"
                 color="textSecondary"
                 align="center"
               >
-                Sign up
+                Let's get started
               </Typography>
               <Box mt={1}>
                 <RegisterForm onSubmitSuccess={handleSubmitSuccess} />
@@ -65,7 +65,7 @@ function RegisterCard() {
                 variant="body2"
                 color="textSecondary"
               >
-                Have an account?
+                Already have an account?
               </Link>
             </FadeIn>
           </CardContent>

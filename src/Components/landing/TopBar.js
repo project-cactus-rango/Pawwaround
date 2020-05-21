@@ -7,7 +7,6 @@ import Pawwaround from "../../images/Pawwaround.png";
 import {
   AppBar,
   Box,
-  Button,
   Divider,
   Toolbar,
   Hidden,
@@ -22,7 +21,7 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: theme.palette.background.default,
   },
   toolbar: {
-    height: 80,
+    height: 88,
   },
   logo: {
     marginRight: theme.spacing(2),
