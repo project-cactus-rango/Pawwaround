@@ -9,7 +9,7 @@ export default function Events() {
       <h1>Upcoming Events</h1>
       <Button variant="outlined" color="primary">Create Event</Button>
       <EventCard/>
-      {/* <EventForm/> */}
+      
       
     </div>
   );

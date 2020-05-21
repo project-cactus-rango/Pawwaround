@@ -14,50 +14,52 @@ function eventForm({ onSubmitSuccess }) {
         eventImg:'',
       }}
     
-      onSubmit={(values)=> {
+      onSubmit={(data)=> {
         // const { eventName, eventDate, eventTime, eventLocation, eventDetails, eventImg} = values;
         //add axios call here
       }}
      >
 
-    {({props}) => (
-       <form>
+    {({values,handleChange,handleBlur,handleSubmit}) => (
+       <form onSubmit={handleSubmit}>
           <TextField
-            placeholder="Event Name"
-            onChangeText={props.handleChange('eventName')}
-            value={props.values.eventName}
+            name="Event Name"
+            value={values.eventName}
+            onChangeText={handleChange}
+            onBlur={handleBlur}
           />
-
-          <TextField
-            placeholder="Event Date"
-            onChangeText={props.handleChange('eventDate')}
-            value={props.values.eventDate}
-          />
-
-          <TextField
-            placeholder="Event Time"
-            onChangeText={props.handleChange('eventTime')}
-            value={props.values.eventTime}
-          />
-
-          <TextField
-            placeholder="Event Location"
-            onChangeText={props.handleChange('eventLocation')}
-            value={props.values.eventLocation}
+            <TextField
+            name="Event Date"
+            value={values.eventDate}
+            onChangeText={handleChange}
+            onBlur={handleBlur}
           />
           <TextField
-            placeholder="Event Details"
-            onChangeText={props.handleChange('eventDetails')}
-            value={props.values.eventDetails}
-          />
-          <TextField
-            placeholder="Event Image"
-            onChangeText={props.handleChange('eventImg')}
-            value={props.values.eventImg}
-          />
-
-          <Button title ='submit' color ='secondary' onPress={props.handleSubmit} > Submit </Button>
-          </form>
+          name="Event Time"
+          value={values.eventTime}
+          onChangeText={handleChange}
+          onBlur={handleBlur}
+        />
+        <TextField
+        name="Event Location"
+        value={values.eventLocation}
+        onChangeText={handleChange}
+        onBlur={handleBlur}
+      />
+      <TextField
+        name="Event Details"
+        value={values.eventDetails}
+        onChangeText={handleChange}
+        onBlur={handleBlur}
+      />
+      <TextField
+        name="Event Image"
+        value={values.eventImg}
+        onChangeText={handleChange}
+        onBlur={handleBlur}
+      />
+    <div><Button title ='submit' color ='secondary' onPress={handleSubmit} > Submit </Button></div>
+    </form>
         )}
 
       </Formik>
