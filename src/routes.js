@@ -5,6 +5,9 @@ import Register from "./pages/Register/Register";
 import Landing from "./pages/Landing/Landing";
 import Links from './pages/Links/Links'
 import Events from "./pages/Events/Events";
+import Map from "./Components/mapbox/mapbox";
+import SearchableMap from "./Components/mapbox/searchableMap";
+import GoogleMap from './Components/googleMap/googleMap'
 
 export default function Routes() {
   return (
@@ -14,6 +17,9 @@ export default function Routes() {
       <Route path='/links' component={Links}/>
       <Route path="/signup" component={Register} />
       <Route path="/events" component={Events} />
+      <Route path='/map' component={Map}/>
+      <Route path='/search' component={SearchableMap} />
+      <Route path='/googlemap' component={GoogleMap} />
     </Switch>
   );
 }
