@@ -1,61 +1,44 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import Typography from "@material-ui/core/Typography";
-import Container from "@material-ui/core/Container";
-import Grid from "@material-ui/core/Grid";
-import Paper from "@material-ui/core/Paper";
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import Typography from '@material-ui/core/Typography';
+import Link from '@material-ui/core/Link';
 
-const useStyles = makeStyles((theme) => ({
-    root: {
-      flexGrow: 1,
-    },
-    paper: {
-      padding: theme.spacing(2),
-      margin: 'auto',
-      maxWidth: 700,
-    },
-    image: {
-      width: 128,
-      height: 128,
-    },
-    img: {
-      margin: 'auto',
-      display: 'block',
-      maxWidth: '100%',
-      maxHeight: '100%',
-    }
-  }));
+const useStyles = makeStyles({
+  root: {
+    maxWidth: 245,
+  },
+  media: {
+    height: 140,
+  },
+});
 
-function LinksCard(){
-    const classes = useStyles();
-  
-    return (
-      <div>
-      <CssBaseline />
-      <Container maxWidth="fixed">
-      <Paper className={classes.paper}>
-        <Grid container spacing={2}>
-          <Grid item xs={12} sm container>
-            <Grid item xs container direction="column" spacing={2}>
-              <Grid item xs>
-                <Typography gutterBottom variant="subtitle1">
-                  Standard license
-                </Typography>
-                <Typography variant="body2" gutterBottom>
-                  Full resolution 1920x1080 • JPEG
-                </Typography>
-                <Typography variant="body2" color="textSecondary">
-                  ID: 1030114
-                </Typography>
-              </Grid>
-            </Grid>
-          </Grid>
-        </Grid>
-      </Paper>
-      </Container>
-      </div>
+export default function MediaCard() {
+  const classes = useStyles();
+
+  return (
+    <Card className={classes.root} variant="outlined">
+      <CardActionArea>
+        <CardMedia
+          className={classes.media}
+          image="https://tapinto-production.s3.amazonaws.com/uploads/articles/as/best_crop_c968f78fa94515c8de9d_aspca.jpg?v=3f72517a147064d02c67"
+          title="ASPCA"
+        />
+        <CardContent>
+          <Typography gutterBottom variant="h4" component="h2">
+            ASPCA Rescue
+          </Typography>
+          <Typography variant="body2" color="textSecondary" component="p">
+          The ASPCA is a national leader in animal rescue and protection, working tirelessly to put an end to animal abuse and neglect. You can fight cruelty and give animals nationwide a second chance at life. </Typography>
+          <Typography variant="h6" color="primary" component="p">
+            <Link href="https://secure.aspca.org/donate/ps-gn-p2?ms=MP_PMK_Googlebrand-T4&initialms=MP_PMK_Googlebrand-T4&pcode=WPSE9XXGOGN2PK00014&lpcode=WPSE9XXGOGN1PK00014&test&ds_rl=1066461&gclid=CjwKCAjw2a32BRBXEiwAUcugiDv3glkC83izvkwo3V97mW6-9fe_AL3xtiWUgcH6kNej43SLIVVWqxoClHEQAvD_BwE&gclsrc=aw.ds"> Contribute Here! </Link>
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+      
+    </Card>
   );
-};
-
-export default LinksCard;
+}
