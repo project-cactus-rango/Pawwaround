@@ -33,7 +33,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-function Events() {
+function AddEvent() {
   const classes = useStyles();
   const [isMobileNavOpen, setMobileNavOpen] = useState(false);
 
@@ -58,4 +58,4 @@ function Events() {
     </div>
   );
 }
-export default Events;
+export default AddEvent;

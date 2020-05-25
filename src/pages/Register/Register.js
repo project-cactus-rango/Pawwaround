@@ -4,6 +4,7 @@ import NavBar from "../../Components/auth/navbar";
 import { makeStyles } from "@material-ui/core";
 import Hidden from "@material-ui/core/Hidden";
 import DogWalk from "../../images/dog_walking.svg";
+import FadeIn from "react-fade-in";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -24,6 +25,7 @@ export default function Register() {
     <div className={classes.root}>
       <NavBar />
       <RegisterCard />
+
       <Hidden only="xs">
         <img alt="dogWalk" src={DogWalk} className={classes.dogWalk} />
       </Hidden>

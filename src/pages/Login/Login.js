@@ -4,6 +4,7 @@ import { makeStyles } from "@material-ui/core";
 import NavBar from "../../Components/auth/navbar";
 import DogSpace from "../../images/DogSpace.svg";
 import Hidden from "@material-ui/core/Hidden";
+import FadeIn from "react-fade-in";
 
 const useStyles = makeStyles(theme => ({
   root: {
