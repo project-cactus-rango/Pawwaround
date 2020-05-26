@@ -52,12 +52,10 @@ export default function HowTo({ className, ...rest }) {
                     gutterBottom
                     className={classes.text}
                   >
-                    Discover groups
+                    Discover Events
                   </Typography>
                   <Typography variant="body1" className={classes.text}>
-                    Not just a set of tools, the package includes the most
-                    common use cases of user flows like User Management, Second
-                    Level Layout.
+                    Whether you're new to town or a local looking to meet new dog parents, you can search through upcoming events located near you.
                   </Typography>
                 </Box>
               </Box>
@@ -71,12 +69,10 @@ export default function HowTo({ className, ...rest }) {
                     gutterBottom
                     className={classes.text}
                   >
-                    Start a group
+                    Start an Event
                   </Typography>
                   <Typography variant="body1" className={classes.text}>
-                    The kit provides support for multiple third-party plugins
-                    right out of the box like Chart.js, Dropzone.js, Kanban
-                    Plugin and many more.
+                    Can't find an event near you? Take initiative and create your own local event for others to join.
                   </Typography>
                 </Box>
               </Box>
