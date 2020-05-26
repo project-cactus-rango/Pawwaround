@@ -13,8 +13,8 @@ const geolocateStyle = {
 const Map = () => {
 
   const [viewport, setViewPort ] = useState({
-    width: "100%",
-    height: 900,
+    width: "20%",
+    height: 300,
     latitude: 0,
     longitude: 0,
     zoom: 2
@@ -24,7 +24,7 @@ const Map = () => {
   
   return (
     <div style={{ margin: '0 auto'}}>
-      <h1 style={{textAlign: 'center', fontSize: '25px', fontWeight: 'bolder' }}>GeoLocator: Click To Find Your Location or click <a href="/search">here</a> to search for a location</h1>
+      <h1 style={{textAlign: 'center', fontSize: '15px', fontWeight: 'bolder' }}> Click the Geolocate icon to find your location or click <a href="/search">here</a> to search for a dog park near you!</h1>
       <MapGL
         {...viewport}
         mapboxApiAccessToken={'pk.eyJ1IjoibWVsaXNzYWFhbGFtIiwiYSI6ImNrYWljdHE0MzA1enMyc21rdWFwY2Vlb3kifQ.gH4fjs8vHVN5w6wCld-x8g'}

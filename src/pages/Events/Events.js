@@ -5,6 +5,7 @@ import TopBar from "../../Components/DashboardLayout/TopBar";
 import EventCard from "../../Components/events/eventCard";
 import LinksCard from "../../Components/links/linksCard";
 import ReportCard from "../../Components/links/reportCard";
+import Mapbox from "../../Components/mapbox/mapbox";
 
 
 const useStyles = makeStyles(theme => ({
@@ -57,6 +58,7 @@ function Events() {
             <EventCard />
             <LinksCard />
             <ReportCard/>
+            <Mapbox />
           </div>
         </div>
       </div>
