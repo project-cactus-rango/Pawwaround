@@ -3,6 +3,10 @@ import { makeStyles, Button } from "@material-ui/core";
 import NavBar from "../../Components/DashboardLayout/NavBar";
 import TopBar from "../../Components/DashboardLayout/TopBar";
 import EventCard from "../../Components/events/eventCard";
+import LinksCard from "../../Components/links/linksCard";
+import ReportCard from "../../Components/links/reportCard";
+import Mapbox from "../../Components/mapbox/mapbox";
+
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -52,6 +56,9 @@ function Events() {
               Create Event
             </Button>
             <EventCard />
+            <LinksCard />
+            <ReportCard/>
+            <Mapbox />
           </div>
         </div>
       </div>
