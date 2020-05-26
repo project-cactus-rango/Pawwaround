@@ -57,16 +57,14 @@ function Hero({ className, ...rest }) {
               height="100%"
             >
               <Typography variant="overline" color="secondary">
-                Welcome
+                Welcome to PawwAround where
               </Typography>
-              <Typography variant="h1" color="textPrimary">
-                PawwAround
+              <Typography variant="h2" color="textPrimary">
+                The Pawwsibilities are Endless
               </Typography>
               <Box mt={3}>
                 <Typography variant="body1" color="textSecondary">
-                  Lorem ipsum is placeholder text commonly used in the graphic,
-                  print, and publishing industries for previewing layouts and
-                  visual mockups.
+                  Explore nearby dog park events or create one of your own!
                 </Typography>
               </Box>
               <Box mt={3}>
