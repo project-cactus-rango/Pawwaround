@@ -2,7 +2,6 @@ import React from "react";
 import clsx from "clsx";
 import {
   Avatar,
-  Button,
   Box,
   Container,
   Grid,
@@ -27,11 +26,9 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-{
-  /* <SvgIcon fontSize="default">
+/* <SvgIcon fontSize="default">
               <Settings />
             </SvgIcon> */
-}
 
 export default function HowTo({ className, ...rest }) {
   const classes = useStyles();
@@ -55,7 +52,9 @@ export default function HowTo({ className, ...rest }) {
                     Discover Events
                   </Typography>
                   <Typography variant="body1" className={classes.text}>
-                    Whether you're new to town or a local looking to meet new dog parents, you can search through upcoming events located near you.
+                    Whether you're new to town or a local looking to meet new
+                    dog parents, you can search through upcoming events located
+                    near you.
                   </Typography>
                 </Box>
               </Box>
@@ -72,7 +71,8 @@ export default function HowTo({ className, ...rest }) {
                     Start an Event
                   </Typography>
                   <Typography variant="body1" className={classes.text}>
-                    Can't find an event near you? Take initiative and create your own local event for others to join.
+                    Can't find an event near you? Take initiative and create
+                    your own local event for others to join.
                   </Typography>
                 </Box>
               </Box>

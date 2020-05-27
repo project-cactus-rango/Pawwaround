@@ -4,22 +4,22 @@ import React, { useEffect } from "react";
 import { useLocation } from "react-router";
 import { Link as RouterLink } from "react-router-dom";
 import Pawwaround from "../../../images/Pawwaround.png";
+import { useHistory } from "react-router";
+import { useSelector, useDispatch } from "react-redux";
+import { clearUser } from "../../../redux/reducer";
+import axios from "axios";
 import {
   Avatar,
   Box,
-  Divider,
   Drawer,
   Hidden,
   Link,
   List,
   ListSubheader,
-  Typography,
+  Button,
   makeStyles,
 } from "@material-ui/core";
-import {
-  BarChart as BarChartIcon,
-  Calendar
-} from "react-feather";
+import { Plus, Calendar, LogOut, User } from "react-feather";
 import NavItem from "./NavItem";
 
 const navConfig = [
@@ -32,9 +32,14 @@ const navConfig = [
         href: "/events",
       },
       {
-        title: "Dashboard",
-        icon: BarChartIcon,
-        href: "/app/reports/dashboard-alternative",
+        title: "Create Event",
+        icon: Plus,
+        href: "/addevent",
+      },
+      {
+        title: "Account",
+        icon: User,
+        href: "/account",
       },
     ],
   },
@@ -89,6 +94,22 @@ const useStyles = makeStyles(() => ({
 function NavBar({ openMobile, onMobileClose }) {
   const classes = useStyles();
   const location = useLocation();
+  const history = useHistory();
+  const dispatch = useDispatch();
+  const user = useSelector(state => state.user);
+  console.log(user);
+
+  const handleLogout = () => {
+    axios
+      .get("/user/logout")
+      .then(() => {
+        dispatch(clearUser());
+        history.push("/");
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  };
 
   useEffect(() => {
     if (openMobile && onMobileClose) {
@@ -120,9 +141,8 @@ function NavBar({ openMobile, onMobileClose }) {
             color="textPrimary"
             underline="none"
           >
-            {`Welcome ${"user.firstName"}`}
+            {`Welcome, ${user.first_name}`}
           </Link>
-
         </Box>
       </Box>
       <Box p={2}>
@@ -141,6 +161,17 @@ function NavBar({ openMobile, onMobileClose }) {
             })}
           </List>
         ))}
+      </Box>
+      <Box p={4} position="absolute" bottom={0} left={0}>
+        <Button
+          color="primary"
+          className={classes.button}
+          startIcon={<LogOut />}
+          onClick={handleLogout}
+          // variant="outlined"
+        >
+          logout
+        </Button>
       </Box>
     </Box>
   );

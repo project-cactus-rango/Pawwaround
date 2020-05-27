@@ -1,16 +1,13 @@
 import React from "react";
 import * as Yup from "yup";
 import { Formik } from "formik";
-import axios from "axios";
+// import axios from "axios";
 import FadeIn from "react-fade-in";
 
 import {
   Box,
   Button,
-  Card,
   CardContent,
-  CardHeader,
-  Divider,
   FormHelperText,
   Grid,
   TextField,
@@ -42,7 +39,7 @@ function PasswordSettings() {
         values,
         { resetForm, setErrors, setStatus, setSubmitting }
       ) => {
-        const { password } = values;
+        // const { password } = values;
         // axios;
         //   .put(`/api/update/password/${user.user_id}`, { password })
         //   .then(() => {
@@ -55,7 +52,6 @@ function PasswordSettings() {
         //     setErrors({ submit: error.message });
         //     setSubmitting(false);
         //   });
-
         //   //   enqueueSnackbar("Password updated", {
         //   //     variant: "success",
         //   //   });
@@ -72,7 +68,7 @@ function PasswordSettings() {
       }) => (
         <FadeIn>
           <form onSubmit={handleSubmit}>
-            <CardContent>
+            <CardContent className={classes.root}>
               <Grid container spacing={3}>
                 <Grid item md={4} sm={6} xs={12}>
                   <TextField

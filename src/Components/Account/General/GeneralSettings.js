@@ -7,14 +7,8 @@ import { updateUser } from "../../../redux/reducer";
 
 import {
   Box,
-  Avatar,
-  Typography,
-  CardActions,
   Button,
-  Card,
   CardContent,
-  CardHeader,
-  Divider,
   FormHelperText,
   Grid,
   TextField,
@@ -83,7 +77,7 @@ function GeneralSettings() {
         values,
       }) => (
         <form onSubmit={handleSubmit}>
-          <CardContent>
+          <CardContent className={classes.root}>
             <Grid container spacing={4}>
               <Grid item md={6} xs={12}>
                 <TextField

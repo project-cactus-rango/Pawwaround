@@ -12,9 +12,11 @@ function General() {
   const classes = useStyles();
   return (
     <FadeIn>
-      <CardHeader title="General" />
-      <Divider />
-      <GeneralSettings />
+      <div className={classes.root}>
+        <CardHeader title="General" />
+        <Divider />
+        <GeneralSettings />
+      </div>
     </FadeIn>
   );
 }
