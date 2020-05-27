@@ -1,7 +1,6 @@
 module.exports = {
   createEvent: (req, res) => {
     const {
-        id,
         title,
         date,
         startTime,
@@ -15,7 +14,6 @@ module.exports = {
 
     db.event
       .add_event(
-        id,
         title,
         date,
         startTime,
@@ -26,7 +24,8 @@ module.exports = {
         img
       )
       .then(() => res.sendStatus(200))
-      .catch((err) => res.status(500).json(err));
+      .catch((err) => {res.status(500).json(err);
+     });
   },
   getUserEvent: (req, res) => {
     const { id } = req.params,
@@ -35,11 +34,12 @@ module.exports = {
     db.event
       .get_user_event(id)
       .then((events) => res.status(200).json(events))
-      .catch((err) => res.status(500).json(err));
+      .catch((err) => { console.log(err) 
+        res.status(500).json(err)});
   },
   deleteEvent: (req, res) => {
     const { id } = req.params,
-      db = reg.app.get("db");
+      db = req.app.get("db");
 
     db.event
       .delete_event(id)
@@ -62,24 +62,31 @@ module.exports = {
 
     db.event.get_single_event(id).then((event) => {
       const newEvent = [
-          title || event[0].title,
-          date || event[0].date,
-          startTime || event[0].startTime,
-          endTime || event[0].endTime,
-          location || event[0].location,
-          description || event[0].description,
-          rsvp || event[0].rsvp,
-          img || event[0].img,
-          +id
-      ]
-      
-        db.event.update_event(newEvent)
+        title || event[0].title,
+        date || event[0].date,
+        startTime || event[0].startTime,
+        endTime || event[0].endTime,
+        location || event[0].location,
+        description || event[0].description,
+        rsvp || event[0].rsvp,
+        img || event[0].img,
+        +id,
+      ];
+
+      db.event
+        .update_event(newEvent)
         .then(() => {
-            db.event.get_user_event(req.session.user.user_id)
+          db.event
+            .get_user_event(req.session.user.user_id)
             .then((events) => res.status(200).json(events))
-            .catch(err => res.status(500).json(err))
+            .catch((err) => res.status(500).json(err));
         })
         .catch((err) => res.status(500).json(err));
     });
   },
+  getAllEvents: (req, res) => {
+      req.app.get('db').event.get_events()
+      .then(events => res.status(200).json(events))
+      .catch(err => res.status(500).json(err))
+  }
 };
