@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core";
 import NavBar from "../../Components/DashboardLayout/NavBar";
 import TopBar from "../../Components/DashboardLayout/TopBar";
+import AccountView from "../../Components/Account/"
 
 
 
@@ -48,7 +49,7 @@ function UserAccount() {
             <div className={classes.wrapper}>
                 <div className={classes.contentContainer}>
                     <div className={classes.content}>
-
+                        <AccountView />
                     </div>
                 </div>
             </div>

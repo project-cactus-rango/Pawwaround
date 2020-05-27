@@ -72,7 +72,7 @@ const useStyles = makeStyles(() => ({
     width: 256,
   },
   desktopDrawer: {
-    width: 160,
+    width: 256,
     top: 88,
     height: "calc(100% - 64px)",
   },

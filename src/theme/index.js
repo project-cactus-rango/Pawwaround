@@ -21,7 +21,7 @@ const themeConfig = {
     },
     background: {
       default: colors.common.white,
-      dark: "#F0F2F2",
+      dark: colors.common.white,
       paper: colors.common.white,
     },
     primary: {
