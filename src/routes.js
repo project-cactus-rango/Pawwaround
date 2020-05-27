@@ -9,6 +9,7 @@ import AddEvent from "./pages/AddEvent/AddEvent";
 import Map from "./Components/mapbox/mapbox";
 import SearchableMap from "./Components/mapbox/searchableMap";
 import GoogleMap from "./Components/googleMap/googleMap";
+import UserAccount from "./pages/UserAccount/UserAccount";
 
 export default function Routes() {
   return (
@@ -22,6 +23,7 @@ export default function Routes() {
       <Route path="/map" component={Map} />
       <Route path="/search" component={SearchableMap} />
       <Route path="/googlemap" component={GoogleMap} />
+      <Route path='/account' component={UserAccount} />
     </Switch>
   );
 }
