@@ -18,21 +18,21 @@ import {
 } from "@material-ui/core";
 import {
   BarChart as BarChartIcon,
-  PieChart as PieChartIcon,
+  Calendar
 } from "react-feather";
 import NavItem from "./NavItem";
 
 const navConfig = [
   {
-    subheader: "Reports",
+    // subheader: "Reports",
     items: [
       {
-        title: "Dashboard",
-        icon: PieChartIcon,
-        href: "/app/reports/dashboard",
+        title: "Events",
+        icon: Calendar,
+        href: "/events",
       },
       {
-        title: "Dashboard Alternative",
+        title: "Dashboard",
         icon: BarChartIcon,
         href: "/app/reports/dashboard-alternative",
       },
@@ -72,7 +72,7 @@ const useStyles = makeStyles(() => ({
     width: 256,
   },
   desktopDrawer: {
-    width: 256,
+    width: 160,
     top: 88,
     height: "calc(100% - 64px)",
   },
@@ -108,26 +108,23 @@ function NavBar({ openMobile, onMobileClose }) {
       </Hidden>
       <Box p={2}>
         <Box display="flex" justifyContent="center">
-          <RouterLink to="/app/account">
+          <RouterLink to="/account">
             <Avatar alt="User" className={classes.avatar} src="{user.avatar}" />
           </RouterLink>
         </Box>
         <Box mt={2} textAlign="center">
           <Link
             component={RouterLink}
-            to="/app/account"
+            to="/account"
             variant="h5"
             color="textPrimary"
             underline="none"
           >
             {`Welcome ${"user.firstName"}`}
           </Link>
-          <Typography variant="body2" color="textSecondary">
-            {"user.bio"}
-          </Typography>
+
         </Box>
       </Box>
-      <Divider />
       <Box p={2}>
         {navConfig.map(config => (
           <List
