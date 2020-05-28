@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/core";
 import NavBar from "../../Components/DashboardLayout/NavBar";
 import TopBar from "../../Components/DashboardLayout/TopBar";
 import LinksCard from "../../Components/links/linksCard";
+import ReportCard from "../../Components/links/reportCard";
 
 const useStyles = makeStyles(theme => ({
   root: {
