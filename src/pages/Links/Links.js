@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core";
 import NavBar from "../../Components/DashboardLayout/NavBar";
 import TopBar from "../../Components/DashboardLayout/TopBar";
-import LinksCard from "../../Components/links/linksCard";
+import Link from "../../Components/links";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -47,7 +47,7 @@ function Links() {
       <div className={classes.wrapper}>
         <div className={classes.contentContainer}>
           <div className={classes.content}>
-            <LinksCard />
+            <Link />
           </div>
         </div>
       </div>

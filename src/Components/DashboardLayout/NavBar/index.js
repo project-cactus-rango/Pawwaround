@@ -19,7 +19,7 @@ import {
   Button,
   makeStyles,
 } from "@material-ui/core";
-import { Plus, Calendar, LogOut, User } from "react-feather";
+import { Plus, Calendar, LogOut, User, Heart } from "react-feather";
 import NavItem from "./NavItem";
 
 const navConfig = [
@@ -40,6 +40,11 @@ const navConfig = [
         title: "Account",
         icon: User,
         href: "/account",
+      },
+      {
+        title: "For Dog Lovers",
+        icon: Heart,
+        href: "/links",
       },
     ],
   },
