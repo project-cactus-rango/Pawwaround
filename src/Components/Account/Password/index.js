@@ -12,9 +12,11 @@ function Password() {
   const classes = useStyles();
   return (
     <FadeIn>
-      <CardHeader title="Update Password" />
-      <Divider />
-      <PasswordSettings />
+      <div className={classes.root}>
+        <CardHeader title="Update Password" />
+        <Divider />
+        <PasswordSettings />
+      </div>
     </FadeIn>
   );
 }

@@ -10,7 +10,6 @@ import {
   Divider,
   Toolbar,
   Hidden,
-  Typography,
   Link,
   makeStyles,
   useScrollTrigger,

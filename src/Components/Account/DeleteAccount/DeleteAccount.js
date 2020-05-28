@@ -1,16 +1,14 @@
 import React from "react";
 import * as Yup from "yup";
 import { Formik } from "formik";
-import { useHistory } from "react-router";
-import axios from "axios";
+// import { useHistory } from "react-router";
+// import axios from "axios";
 import FadeIn from "react-fade-in";
 
 import {
   Box,
   Button,
-  Card,
   CardContent,
-  CardHeader,
   Divider,
   FormHelperText,
   Grid,
@@ -24,7 +22,7 @@ const useStyles = makeStyles(() => ({
 
 function DeleteAccount() {
   const classes = useStyles();
-  const history = useHistory();
+  // const history = useHistory();
   // console.log(user.user_id);
   return (
     <Formik
@@ -65,7 +63,7 @@ function DeleteAccount() {
       }) => (
         <FadeIn>
           <form onSubmit={handleSubmit}>
-            <CardContent>
+            <CardContent className={classes.root}>
               <Grid container spacing={3}>
                 <Grid item md={4} sm={6} xs={12}>
                   <TextField

@@ -46,13 +46,7 @@ function AddEvent() {
       />
       <div className={classes.wrapper}>
         <div className={classes.contentContainer}>
-          <div className={classes.content}>
-            <h1>Upcoming Events</h1>
-            <Button variant="outlined" color="primary">
-              Create Event
-            </Button>
-            <EventCard />
-          </div>
+          <div className={classes.content}></div>
         </div>
       </div>
     </div>

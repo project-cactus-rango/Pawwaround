@@ -13,7 +13,6 @@ import {
   SvgIcon,
   useScrollTrigger,
 } from "@material-ui/core";
-import Account from "./Account";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -63,10 +62,7 @@ export default function TopBar({ onMobileNavOpen }, props) {
             </RouterLink>
           </Hidden>
           <Box ml={2} flexGrow={1} />
-          {/* <Search /> */}
-          {/* <Contacts /> */}
           <Notifications />
-          {/* <Settings /> */}
         </Toolbar>
       </AppBar>
     </ElevationScroll>

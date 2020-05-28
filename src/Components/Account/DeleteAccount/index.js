@@ -12,9 +12,11 @@ function Delete() {
   const classes = useStyles();
   return (
     <FadeIn>
-      <CardHeader title="Deactivate your account" />
-      <Divider />
-      <DeleteAccount />
+      <div className={classes.root}>
+        <CardHeader title="Deactivate your account" />
+        <Divider />
+        <DeleteAccount />
+      </div>
     </FadeIn>
   );
 }
