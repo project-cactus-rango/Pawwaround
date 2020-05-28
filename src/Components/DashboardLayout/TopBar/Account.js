@@ -15,7 +15,7 @@ import {
   makeStyles,
 } from "@material-ui/core";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   avatar: {
     height: 32,
     width: 32,
@@ -82,7 +82,7 @@ export default function Account() {
         <MenuItem component={RouterLink} to="/account">
           Account
         </MenuItem>
-        <MenuItem onClick={handleLogout}>Logout</MenuItem>
+        <MenuItem onClick={handleLogout} >Logout</MenuItem>
       </Menu>
     </>
   );
