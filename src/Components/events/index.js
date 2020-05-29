@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "./Header";
+import EventForm from "./EventForm";
 
 import {
   Box,
@@ -25,11 +26,8 @@ export default function CreateEvents() {
       <Container maxWidth="lg">
         <Header />
         <Grid className={classes.root} container spacing={3}>
-          <Box mt={3}></Box>
           <Grid item lg={10} md={10} xl={9} xs={12}>
-            <Card>
-              <CardContent></CardContent>
-            </Card>
+            <EventForm />
           </Grid>
         </Grid>
       </Container>
