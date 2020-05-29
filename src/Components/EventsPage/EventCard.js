@@ -17,6 +17,7 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import { Grid } from "@material-ui/core";
 import FadeIn from "react-fade-in";
+import logo from "../../images/dogLogo.svg";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -38,7 +39,8 @@ const useStyles = makeStyles(theme => ({
     transform: "rotate(180deg)",
   },
   avatar: {
-    backgroundColor: red[500],
+    height: 50,
+    width: 50,
   },
 }));
 
@@ -63,9 +65,11 @@ export default function EventCard({
         <Card className={classes.root}>
           <CardHeader
             avatar={
-              <Avatar aria-label="corgi" className={classes.avatar}>
-                ML
-              </Avatar>
+              <Avatar
+                aria-label="corgi"
+                className={classes.avatar}
+                src={logo}
+              />
             }
             action={
               <IconButton aria-label="settings">
