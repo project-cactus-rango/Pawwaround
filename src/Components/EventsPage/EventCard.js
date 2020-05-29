@@ -16,6 +16,7 @@ import ShareIcon from "@material-ui/icons/Share";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import { Grid } from "@material-ui/core";
+import FadeIn from "react-fade-in";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -58,53 +59,59 @@ export default function EventCard({
 
   return (
     <Grid item lg={4} md={4} xl={4} xs={12}>
-      <Card className={classes.root}>
-        <CardHeader
-          avatar={
-            <Avatar aria-label="corgi" className={classes.avatar}>
-              ML
-            </Avatar>
-          }
-          action={
-            <IconButton aria-label="settings">
-              <MoreVertIcon />
-            </IconButton>
-          }
-          title={title}
-          subheader={date}
-        />
-        <CardMedia className={classes.media} image={img} title="Corgi Event" />
-        <CardContent>
-          <Typography variant="body2" color="textSecondary" component="p">
-            {description}
-          </Typography>
-        </CardContent>
-        <CardActions disableSpacing>
-          <IconButton aria-label="add to favorites">
-            <FavoriteIcon />
-          </IconButton>
-          <IconButton aria-label="share">
-            <ShareIcon />
-          </IconButton>
-          <IconButton
-            className={clsx(classes.expand, {
-              [classes.expandOpen]: expanded,
-            })}
-            onClick={handleExpandClick}
-            aria-expanded={expanded}
-            aria-label="show more"
-          >
-            <ExpandMoreIcon />
-          </IconButton>
-        </CardActions>
-        <Collapse in={expanded} timeout="auto" unmountOnExit>
+      <FadeIn>
+        <Card className={classes.root}>
+          <CardHeader
+            avatar={
+              <Avatar aria-label="corgi" className={classes.avatar}>
+                ML
+              </Avatar>
+            }
+            action={
+              <IconButton aria-label="settings">
+                <MoreVertIcon />
+              </IconButton>
+            }
+            title={title}
+            subheader={date}
+          />
+          <CardMedia
+            className={classes.media}
+            image={img}
+            title="Corgi Event"
+          />
           <CardContent>
-            <Typography paragraph>{`Location: ${location}`}</Typography>
-            <Typography paragraph>{`Time: ${time}`}</Typography>
-            <Typography paragraph>RSVP</Typography>
+            <Typography variant="body2" color="textSecondary" component="p">
+              {description}
+            </Typography>
           </CardContent>
-        </Collapse>
-      </Card>
+          <CardActions disableSpacing>
+            <IconButton aria-label="add to favorites">
+              <FavoriteIcon />
+            </IconButton>
+            <IconButton aria-label="share">
+              <ShareIcon />
+            </IconButton>
+            <IconButton
+              className={clsx(classes.expand, {
+                [classes.expandOpen]: expanded,
+              })}
+              onClick={handleExpandClick}
+              aria-expanded={expanded}
+              aria-label="show more"
+            >
+              <ExpandMoreIcon />
+            </IconButton>
+          </CardActions>
+          <Collapse in={expanded} timeout="auto" unmountOnExit>
+            <CardContent>
+              <Typography paragraph>{`Location: ${location}`}</Typography>
+              <Typography paragraph>{`Time: ${time}`}</Typography>
+              <Typography paragraph>RSVP</Typography>
+            </CardContent>
+          </Collapse>
+        </Card>
+      </FadeIn>
     </Grid>
   );
 }
