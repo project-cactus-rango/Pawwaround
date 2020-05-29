@@ -369,7 +369,7 @@ function EventForm({ className, ...rest }) {
               type="submit"
               disabled={isSubmitting}
             >
-              Create product
+              Create event
             </Button>
           </Box>
         </form>
