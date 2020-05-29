@@ -3,7 +3,7 @@ const express = require("express"),
   massive = require("massive"),
   session = require("express-session"),
   userCtrl = require("./Controller/userController"),
-  eventCtrl = require('./Controller/eventController'),
+  eventCtrl = require("./Controller/eventController"),
   { SERVER_PORT, SESSION_SECRET, DB_STRING } = process.env,
   app = express(),
   path = require("path");
@@ -26,6 +26,10 @@ massive({
 }).then(db => {
   app.set("db", db);
   console.log("DB Connected");
+  app.listen(
+    SERVER_PORT,
+    console.log(`Server sprinting on ${SERVER_PORT}, okie dokie!`)
+  );
 });
 
 //user endpoints
@@ -34,13 +38,8 @@ app.post("/user/login", userCtrl.login);
 app.get("/user/logout", userCtrl.logout);
 
 //event endpoints
-app.post('/api/event', eventCtrl.createEvent)
-app.get('/api/event/:id', eventCtrl.getUserEvent)
-app.delete('/api/event/:id', eventCtrl.deleteEvent)
-app.put('/api/event/:id', eventCtrl.updateEvent)
-app.get('/api/event', eventCtrl.getAllEvents)
-
-app.listen(
-  SERVER_PORT,
-  console.log(`Server sprinting on ${SERVER_PORT}, okie dokie!`)
-);
+app.post("/api/event", eventCtrl.createEvent);
+app.get("/api/event/:id", eventCtrl.getUserEvent);
+app.delete("/api/event/:id", eventCtrl.deleteEvent);
+app.put("/api/event/:id", eventCtrl.updateEvent);
+app.get("/api/event", eventCtrl.getAllEvents);

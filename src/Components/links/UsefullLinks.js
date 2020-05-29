@@ -12,6 +12,7 @@ const useStyles = makeStyles(theme => ({
     display: "flex",
   },
   card: {
+    height: "100%",
     maxWidth: 245,
     margin: theme.spacing(1),
   },
