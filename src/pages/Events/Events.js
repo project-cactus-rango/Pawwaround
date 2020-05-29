@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { makeStyles, Button } from "@material-ui/core";
 import NavBar from "../../Components/DashboardLayout/NavBar";
 import TopBar from "../../Components/DashboardLayout/TopBar";
-import EventCard from "../../Components/events/eventCard";
+import EventCard from "../../Components/AddEvents/eventCard";
 import ReportCard from "../../Components/links/reportCard";
 import Mapbox from "../../Components/mapbox/mapbox";
 
@@ -54,7 +54,6 @@ function Events() {
               Create Event
             </Button>
             <EventCard />
-            <ReportCard />
             <Mapbox />
           </div>
         </div>

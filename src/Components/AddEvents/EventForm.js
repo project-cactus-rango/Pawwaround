@@ -72,7 +72,7 @@ function EventForm({ className, ...rest }) {
   if (typeof window !== "undefined" && !loaded.current) {
     if (!document.querySelector("#google-maps")) {
       loadScript(
-        "https://maps.googleapis.com/maps/api/js?key=AIzaSyBhu3Hds8T2OPYUO-SB2fUOSvW-4Ygh90A&libraries=places",
+        `https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_GOOGLE_MAP_APP_API_KEY}&libraries=places`,
         document.querySelector("head"),
         "google-maps"
       );

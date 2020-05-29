@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { makeStyles, Button } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core";
 import NavBar from "../../Components/DashboardLayout/NavBar";
 import TopBar from "../../Components/DashboardLayout/TopBar";
-import EventCard from "../../Components/events/eventCard";
-import CreateEvents from "../../Components/events";
+
+import CreateEvents from "../../Components/AddEvents";
 
 const useStyles = makeStyles(theme => ({
   root: {

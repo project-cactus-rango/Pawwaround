@@ -10,6 +10,7 @@ import {
   CardContent,
   makeStyles,
 } from "@material-ui/core";
+import FadeIn from "react-fade-in";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -27,7 +28,9 @@ export default function CreateEvents() {
         <Header />
         <Grid className={classes.root} container spacing={3}>
           <Grid item lg={10} md={10} xl={9} xs={12}>
-            <EventForm />
+            <FadeIn>
+              <EventForm />
+            </FadeIn>
           </Grid>
         </Grid>
       </Container>

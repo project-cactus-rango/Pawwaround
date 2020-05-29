@@ -32,9 +32,7 @@ const Map = () => {
     <Box>
       <MapGL
         {...viewport}
-        mapboxApiAccessToken={
-          "pk.eyJ1IjoibWVsaXNzYWFhbGFtIiwiYSI6ImNrYWljdHE0MzA1enMyc21rdWFwY2Vlb3kifQ.gH4fjs8vHVN5w6wCld-x8g"
-        }
+        mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_MAP_APP_API_KEY}
         mapStyle="mapbox://styles/mapbox/dark-v8"
         onViewportChange={_onViewportChange}
       >
