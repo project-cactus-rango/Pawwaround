@@ -64,6 +64,7 @@ function EventForm({ className, ...rest }) {
   // const { enqueueSnackbar } = useSnackbar();
   const [selectedDate, setSelectedDate] = React.useState(new Date());
   // <====================Helper Funtions for AutoFill===========>
+  // eslint-disable-next-line
   const [value, setValue] = React.useState(null);
   const [inputValue, setInputValue] = React.useState("");
   const [options, setOptions] = React.useState([]);

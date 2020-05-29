@@ -1,13 +1,7 @@
 import React from "react";
 import Header from "./Header";
 
-import {
-  Box,
-  Container,
-  Grid,
-  makeStyles,
-  Typography,
-} from "@material-ui/core";
+import { Container, Grid, makeStyles, Typography } from "@material-ui/core";
 import UsefulLinks from "./UsefullLinks";
 
 const useStyles = makeStyles(theme => ({

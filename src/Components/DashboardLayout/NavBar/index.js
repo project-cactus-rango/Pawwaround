@@ -7,6 +7,7 @@ import Pawwaround from "../../../images/Pawwaround.png";
 import { useHistory } from "react-router";
 import { useSelector, useDispatch } from "react-redux";
 import { clearUser } from "../../../redux/reducer";
+import avatar from "../../../images/Avatar.jpg";
 import axios from "axios";
 import {
   Avatar,
@@ -88,8 +89,8 @@ const useStyles = makeStyles(() => ({
   },
   avatar: {
     cursor: "pointer",
-    width: 64,
-    height: 64,
+    width: 120,
+    height: 120,
   },
   logo: {
     height: 40,
@@ -102,7 +103,6 @@ function NavBar({ openMobile, onMobileClose }) {
   const history = useHistory();
   const dispatch = useDispatch();
   const user = useSelector(state => state.user);
-  console.log(user);
 
   const handleLogout = () => {
     axios
@@ -135,7 +135,7 @@ function NavBar({ openMobile, onMobileClose }) {
       <Box p={2}>
         <Box display="flex" justifyContent="center">
           <RouterLink to="/account">
-            <Avatar alt="User" className={classes.avatar} src="{user.avatar}" />
+            <Avatar alt="User" className={classes.avatar} src={avatar} />
           </RouterLink>
         </Box>
         <Box mt={2} textAlign="center">

@@ -11,11 +11,11 @@ CREATE TABLE IF NOT EXISTS event(
     event_id SERIAL PRIMARY KEY,
     user_id INT REFERENCES users(user_id),
     title VARCHAR(250),
-    date SMALLINT(30),
-    start_time SMALLINT(10),
-    end_time SMALLINT(10),
+    date varchar(30),
+    start_time varchar(10),
+    end_time varchar(10),
     location VARCHAR(100),
-    description VARCHAR(200),
+    description VARCHAR(3000),
     rsvp BOOLEAN,
-    img IMAGE
-);
+    img VARCHAR(250)
+)

@@ -1,10 +1,12 @@
 import React, { useState } from "react";
-import { makeStyles, Button } from "@material-ui/core";
+
+import { makeStyles } from "@material-ui/core";
 import NavBar from "../../Components/DashboardLayout/NavBar";
 import TopBar from "../../Components/DashboardLayout/TopBar";
-import EventCard from "../../Components/AddEvents/eventCard";
-import ReportCard from "../../Components/links/reportCard";
-import Mapbox from "../../Components/mapbox/mapbox";
+import EventsPage from "../../Components/EventsPage";
+// import EventCard from "../../Components/EventsPage/eventCard";
+// import ReportCard from "../../Components/links/reportCard";
+// import Mapbox from "../../Components/mapbox/mapbox";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -49,12 +51,13 @@ function Events() {
       <div className={classes.wrapper}>
         <div className={classes.contentContainer}>
           <div className={classes.content}>
-            <h1>Upcoming Events</h1>
+            <EventsPage />
+            {/* <h1>Upcoming Events</h1>
             <Button variant="outlined" color="primary">
               Create Event
-            </Button>
-            <EventCard />
-            <Mapbox />
+            </Button> */}
+            {/* <EventCard /> */}
+            {/* <Mapbox /> */}
           </div>
         </div>
       </div>

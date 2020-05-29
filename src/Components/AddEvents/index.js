@@ -2,14 +2,7 @@ import React from "react";
 import Header from "./Header";
 import EventForm from "./EventForm";
 
-import {
-  Box,
-  Container,
-  Grid,
-  Card,
-  CardContent,
-  makeStyles,
-} from "@material-ui/core";
+import { Container, Grid, makeStyles } from "@material-ui/core";
 import FadeIn from "react-fade-in";
 
 const useStyles = makeStyles(theme => ({
