@@ -10,11 +10,6 @@ const express = require("express"),
 
 app.use(express.json());
 
-app.use(express.static(__dirname + "/../build"));
-
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../build/index.html"));
-});
 app.use(
   session({
     resave: false,
@@ -45,6 +40,11 @@ app.delete("/api/event/:id", eventCtrl.deleteEvent);
 app.put("/api/event/:id", eventCtrl.updateEvent);
 app.get("/api/event", eventCtrl.getAllEvents);
 
+app.use(express.static(__dirname + "/../build"));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../build/index.html"));
+});
 app.listen(
   SERVER_PORT,
   console.log(`Server sprinting on ${SERVER_PORT}, okie dokie!`)
