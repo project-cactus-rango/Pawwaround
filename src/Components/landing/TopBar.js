@@ -83,7 +83,7 @@ export default function TopBar(props) {
             underline="none"
             variant="body1"
           >
-            Login in
+            Login
           </Link>
           <Link
             className={classes.link}

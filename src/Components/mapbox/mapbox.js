@@ -1,44 +1,49 @@
-import React,{ useState } from 'react'
-import MapGL, {GeolocateControl } from 'react-map-gl'
-import 'mapbox-gl/dist/mapbox-gl.css'
+import React, { useState } from "react";
+import MapGL, { GeolocateControl } from "react-map-gl";
+import { Box, makeStyles } from "@material-ui/core";
+import "mapbox-gl/dist/mapbox-gl.css";
 
 // const TOKEN=config.REACT_APP_TOKEN
 
-const geolocateStyle = {
-  float: 'left',
-  margin: '50px',
-  padding: '10px'
-};
+const useStyles = makeStyles(theme => ({
+  root: {
+    width: "100%",
+  },
+  GeolocateControl: {
+    position: "absolute",
+    margin: theme.spacing(1),
+  },
+}));
 
 const Map = () => {
-
-  const [viewport, setViewPort ] = useState({
-    width: "20%",
+  const classes = useStyles();
+  const [viewport, setViewPort] = useState({
     height: 300,
-    latitude: 0,
-    longitude: 0,
-    zoom: 2
-  })
+    width: "100%",
+    latitude: 38.5,
+    longitude: -98.0,
+    zoom: 1,
+  });
 
-  const _onViewportChange = viewport => setViewPort({...viewport, transitionDuration: 3000 })
-  
+  const _onViewportChange = viewport =>
+    setViewPort({ ...viewport, transitionDuration: 3000 });
+
   return (
-    <div style={{ margin: '0 auto'}}>
-      <h1 style={{textAlign: 'center', fontSize: '15px', fontWeight: 'bolder' }}> Click the Geolocate icon to find your location or click <a href="/search">here</a> to search for a dog park near you!</h1>
+    <Box>
       <MapGL
         {...viewport}
-        mapboxApiAccessToken={'pk.eyJ1IjoibWVsaXNzYWFhbGFtIiwiYSI6ImNrYWljdHE0MzA1enMyc21rdWFwY2Vlb3kifQ.gH4fjs8vHVN5w6wCld-x8g'}
+        mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_MAP_APP_API_KEY}
         mapStyle="mapbox://styles/mapbox/dark-v8"
         onViewportChange={_onViewportChange}
       >
         <GeolocateControl
-          style={geolocateStyle}
-          positionOptions={{enableHighAccuracy: true}}
+          className={classes.GeolocateControl}
+          positionOptions={{ enableHighAccuracy: true }}
           trackUserLocation={true}
         />
       </MapGL>
-    </div>
-  )
-}
+    </Box>
+  );
+};
 
-export default Map
+export default Map;
